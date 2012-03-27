@@ -20,7 +20,7 @@ describe Character do
 
     it 'works for gnome programmer' do
       gnome = Character.new(:race=>'gnome', :occupation=>'programmer')
-      gnome.greeting.should == 'GutenTag. DoYouKnowRuby?'
+      gnome.greeting.should == 'GutenTag.DoYouKnowRuby?'
     end
 
     it 'works for dwarf smith' do

@@ -7,9 +7,17 @@ class Character
   include Character::Race
   include Character::Occupation
 
+
   def greeting
-    race_greeting +
-    (race_module.methods.include?(:race_modifier) ? race_module.race_modifier(occupation_greeting) : occupation_greeting)
+    if race_module.methods.include?(:race_modifier)
+      race_module.race_modifier(clean_greeting)
+    else
+      clean_greeting
+    end
+  end
+
+  def clean_greeting
+    "#{race_greeting} #{occupation_greeting}"
   end
 
   def race_greeting

@@ -2,7 +2,7 @@ class Character
   module Race
     module Dwarf
       def race_greeting
-        'Humpf! '
+        'Humpf!'
       end
     end
   end

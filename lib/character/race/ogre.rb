@@ -2,7 +2,7 @@ class Character
   module Race
     module Ogre
       def race_greeting
-        'Grumph! '
+        'Grumph!'
       end
     end
   end

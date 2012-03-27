@@ -2,7 +2,7 @@ class Character
   module Race
     module Hobbit
       def race_greeting
-        'Good Morning. '
+        'Good Morning.'
       end
     end
   end

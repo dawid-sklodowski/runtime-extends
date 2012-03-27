@@ -2,7 +2,7 @@ class Character
   module Race
     module Elf
       def race_greeting
-        'Heil! '
+        'Heil!'
       end
     end
   end
