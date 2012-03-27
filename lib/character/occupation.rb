@@ -7,7 +7,7 @@ require 'character/occupation/wizard'
 
 class Character
   module Occupation
-    def included(base)
+    def self.included(base)
       base.send(:attr_reader, :occupation)
     end
 

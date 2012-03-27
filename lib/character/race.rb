@@ -7,7 +7,9 @@ require 'character/race/ogre'
 
 class Character
   module Race
-    def included(base)
+    include Common
+
+    def self.included(base)
       base.send(:attr_reader, :race)
     end
 

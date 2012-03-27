@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'active_support'
+require 'character/common'
 require 'character/race'
 require 'character/occupation'
 
