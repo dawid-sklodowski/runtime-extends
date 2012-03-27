@@ -1,6 +1,6 @@
 class Character
   module Occupation
-    module Programmer
+    module Warrior
       def occupation_greeting
         "I will kill you!"
       end

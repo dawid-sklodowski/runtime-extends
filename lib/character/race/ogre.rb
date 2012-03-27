@@ -1,6 +1,6 @@
 class Character
   module Race
-    module Human
+    module Ogre
       def race_greeting
         'Grumph! '
       end

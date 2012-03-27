@@ -22,9 +22,14 @@ class Character
       super if defined? super
     end
 
+    def occupation_module
+      ActiveSupport::Inflector::constantize("Character::Occupation::#{@occupation.capitalize}")
+    end
+
+    private
     def include_occupation
       eigen_class = class << self;self;end;
-      eigen_class.send(:include, "Character::Race::#{@occupation.capitalize}".constantize)
+      eigen_class.send(:include, occupation_module)
     end
   end
 end

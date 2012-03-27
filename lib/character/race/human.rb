@@ -2,7 +2,7 @@ class Character
   module Race
     module Human
       def race_greeting
-        'Good Day, '
+        'Good Day. '
       end
     end
   end

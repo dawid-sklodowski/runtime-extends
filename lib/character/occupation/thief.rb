@@ -1,8 +1,8 @@
 class Character
   module Occupation
-    module Programmer
+    module Thief
       def occupation_greeting
-        "Good Morning, haven't you lost something?"
+        "Haven't you lost something?"
       end
     end
   end

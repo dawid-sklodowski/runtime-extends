@@ -1,6 +1,6 @@
 class Character
   module Occupation
-    module Programmer
+    module Wizard
       def occupation_greeting
         "Did you see my staff?"
       end

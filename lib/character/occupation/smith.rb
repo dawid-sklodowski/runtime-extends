@@ -1,8 +1,8 @@
 class Character
   module Occupation
-    module Programmer
+    module Smith
       def occupation_greeting
-        'Humpf!, your sword needs to be fixed.'
+        'Your sword needs to be fixed.'
       end
     end
   end

@@ -15,27 +15,27 @@ describe Character do
 
     it 'works for hobbit thief' do
       hobbit = Character.new(:race=>'hobbit', :occupation=>'thief')
-      hobbit.greeting.should == "Good Morning, haven't you lost something?"
+      hobbit.greeting.should == "Good Morning. Haven't you lost something?"
     end
 
     it 'works for gnome programmer' do
       gnome = Character.new(:race=>'gnome', :occupation=>'programmer')
-      gnome.greeting.should == 'GutenTag, DoYouKnowRuby?'
+      gnome.greeting.should == 'GutenTag. DoYouKnowRuby?'
     end
 
     it 'works for dwarf smith' do
       dwarf = Character.new(:race=>'dwarf', :occupation=>'smith')
-      dwarf.greeting.should == 'Humpf!, your sword needs to be fixed.'
+      dwarf.greeting.should == 'Humpf! Your sword needs to be fixed.'
     end
 
     it 'works for human priest' do
       human = Character.new(:race=>'human', :occupation=>'priest')
-      human.greeting.should == 'Good Day, only Chosen One knows his path!'
+      human.greeting.should == 'Good Day. Only Chosen One knows his path!'
     end
 
     it 'works for human programmer' do
-      gnome = Character.new(:race=>'gnome', :occupation=>'programmer')
-      gnome.greeting.should == 'Good Day, Do you know Ruby?'
+      gnome = Character.new(:race=>'human', :occupation=>'programmer')
+      gnome.greeting.should == 'Good Day. Do you know Ruby?'
     end
   end
 end
