@@ -7,29 +7,6 @@ require 'character/occupation/wizard'
 
 class Character
   module Occupation
-    def self.included(base)
-      base.send(:attr_reader, :occupation)
-    end
-
-    def occupation=(value)
-      @occupation = value
-      include_occupation
-    end
-
-    def initialize(options={})
-      @occupation = options[:occupation]
-      include_occupation
-      super if defined? super
-    end
-
-    def occupation_module
-      ActiveSupport::Inflector::constantize("Character::Occupation::#{@occupation.capitalize}")
-    end
-
-    private
-    def include_occupation
-      eigen_class = class << self;self;end;
-      eigen_class.send(:include, occupation_module)
-    end
+    include Common
   end
 end

@@ -1,37 +1,28 @@
 module Common
   def self.included(base)
-    puts base.name
-  end
+    base_name = base.name.split('::').last.downcase
+    base.send(:attr_reader, base_name.to_sym)
+    base.class_eval <<EOF
+      def initialize(options={})
+        @#{base_name} = options[:#{base_name}]
+        include_#{base_name}
+        super if defined? super
+      end
 
-  module ClassMethods
-    def included(base)
-      base.send(:attr_reader, )
-    end
-  end
+      def #{base_name}=(value)
+        @#{base_name} = value
+        include_#{base_name}
+      end
 
+      def #{base_name}_module
+        ActiveSupport::Inflector::constantize("Character::#{base_name.capitalize}::\#{@#{base_name}.capitalize}")
+      end
 
-  def self.included(base)
-    base.send(:attr_reader, :race)
-  end
-
-  def race=(value)
-    @race = value
-    include_race
-  end
-
-  def initialize(options={})
-    @race = options[:race]
-    include_race
-    super if defined? super
-  end
-
-  def race_module
-    ActiveSupport::Inflector::constantize("Character::Race::#{@race.capitalize}")
-  end
-
-  private
-  def include_race
-    eigen_class = class << self;self;end;
-    eigen_class.send(:include, race_module)
+      private
+        def include_#{base_name}
+          eigen_class = class << self;self;end;
+          eigen_class.send(:include, #{base_name}_module)
+        end
+EOF
   end
 end
