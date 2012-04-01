@@ -2,7 +2,7 @@ module Common
   def self.included(base)
     base_name = base.name.split('::').last.downcase
     base.send(:attr_reader, base_name.to_sym)
-    base.class_eval <<EOF
+    base.class_eval <<-EOS
       def initialize(options={})
         @#{base_name} = options[:#{base_name}]
         include_#{base_name}
@@ -23,6 +23,6 @@ module Common
           eigen_class = class << self;self;end;
           eigen_class.send(:include, #{base_name}_module)
         end
-EOF
+    EOS
   end
 end
