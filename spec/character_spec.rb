@@ -3,7 +3,7 @@ require 'character'
 
 describe Character do
   context 'attribute readers' do
-    it 'is being set during initialization' do
+    it 'are being set during initialization' do
       ogre = Character.new(:race=>'ogre', :occupation=>'warrior')
       ogre.race.should == 'ogre'
       ogre.occupation.should == 'warrior'
@@ -59,6 +59,13 @@ describe Character do
       character.race = 'gnome'
       character.occupation = 'priest'
       character.greeting.should == 'GutenTag.OnlyChosenOneKnowsHisPath!'
+    end
+
+    it 'works for hobbit priest who was dwarf thief' do
+      character = Character.new(:race=>'dwarf', :occupation=>'thief')
+      character.race = 'hobbit'
+      character.occupation = 'priest'
+      character.greeting.should == 'Good Morning. Only Chosen One knows his path!'
     end
   end
 end

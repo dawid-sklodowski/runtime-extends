@@ -20,8 +20,8 @@ module Common
 
       private
         def include_#{base_name}
-          eigen_class = class << self;self;end;
-          eigen_class.send(:include, #{base_name}_module)
+          singleton_class = class << self;self;end;
+          singleton_class.send(:include, #{base_name}_module)
         end
     EOS
   end
