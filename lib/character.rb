@@ -10,7 +10,7 @@ class Character
 
 
   def greeting
-    if race_module.methods.include?(:race_modifier)
+    if race_module.respond_to?(:race_modifier)
       race_module.race_modifier(clean_greeting)
     else
       clean_greeting
@@ -28,4 +28,5 @@ class Character
   def occupation_greeting
     raise 'Not implemented'
   end
+
 end
