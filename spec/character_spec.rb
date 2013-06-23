@@ -50,8 +50,8 @@ describe Character do
     end
 
     it 'works for human programmer' do
-      gnome = Character.new(:race=>'human', :occupation=>'programmer')
-      gnome.greeting.should == 'Good Day. Do you know Ruby?'
+      human = Character.new(:race=>'human', :occupation=>'programmer')
+      human.greeting.should == 'Good Day. Do you know Ruby?'
     end
 
     it 'works for gnome priest who was dwarf thief' do

@@ -7,6 +7,7 @@ module Common
         @#{base_name} = options[:#{base_name}]
         include_#{base_name}
         super if defined? super
+        rescue ArgumentError
       end
 
       def #{base_name}=(value)
